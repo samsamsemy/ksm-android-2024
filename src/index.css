@@ -1,0 +1,140 @@
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  background-color: #f8f9fa;
+  color: #343a40;
+}
+
+._bento-container_ {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 16px;
+  padding: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+._bento-item_ {
+  background: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+._bento-item_ img {
+  /* max-width: 100%; */
+  border-radius: 50%;
+  max-width: 300px;
+}
+
+._large_ {
+  grid-column: span 4;
+  grid-row: span 1;
+}
+
+._medium_ {
+  grid-column: span 2;
+}
+
+._small_ {
+  grid-column: span 1;
+}
+
+._btn_ {
+  padding: 1.1em 2em;
+  background: none;
+  border: 2px solid #fff;
+  font-size: 15px;
+  color: #131313;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+  border-radius: 12px;
+  background-color: #ecd448;
+  font-weight: bolder;
+  box-shadow: 0 2px 0 2px #000;
+}
+
+._btn_:before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 120%;
+  background-color: #ff6700;
+  top: 50%;
+  transform: skewX(30deg) translate(-150%, -50%);
+  transition: all 0.5s;
+}
+
+._btn_:hover {
+  background-color: #4cc9f0;
+  color: #fff;
+  box-shadow: 0 2px 0 2px #0d3b66;
+}
+
+._btn_:hover::before {
+  transform: skewX(30deg) translate(150%, -50%);
+  transition-delay: 0.1s;
+}
+
+._btn_:active {
+  transform: scale(0.9);
+}
+
+h1,
+h3 {
+  margin: 12px 0;
+}
+
+p {
+  margin: 8px 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  margin: 8px 0;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  ._bento-container_ {
+    grid-template-columns: repeat(2, 1fr); /* Dua kolom untuk layar sedang */
+  }
+
+  ._large_ {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  ._bento-container_ {
+    grid-template-columns: repeat(1, 1fr); /* Satu kolom untuk layar kecil */
+  }
+
+  ._large_,
+  ._medium_,
+  ._small_ {
+    grid-column: span 1; /* Semua blok menjadi satu baris */
+  }
+}
